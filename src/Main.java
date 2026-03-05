@@ -23,9 +23,19 @@ public class Main {
 
             int choice = scanner.nextInt();
             scanner.nextLine();
+          if (choice == 1) {
 
-            if (choice == 1) {
-                System.out.println("Create Account feature coming soon...");
+           System.out.print("Enter Account Number: ");
+           int accNumber = scanner.nextInt();
+           scanner.nextLine();
+
+            System.out.print("Enter Account Holder Name: ");
+             String name = scanner.nextLine();
+
+            Account newAccount = new Account(accNumber, name);
+           accounts.add(newAccount);
+
+           System.out.println("Account created successfully!");   
             } else if (choice == 2) {
                 System.out.println("View Accounts feature coming soon...");
             } else if (choice == 3) {
