@@ -51,9 +51,34 @@ public class Main {
             );
         }
     }
-            } else if (choice == 3) {
-                System.out.println("Deposit feature coming soon...");
-            } else if (choice == 4) {
+           } else if (choice == 3) {
+
+    System.out.print("Enter Account Number: ");
+    int accNumber = scanner.nextInt();
+
+    boolean found = false;
+
+    for (Account acc : accounts) {
+
+        if (acc.getAccountNumber() == accNumber) {
+
+            System.out.print("Enter deposit amount: ");
+            double amount = scanner.nextDouble();
+
+            acc.deposit(amount);
+
+            System.out.println("Deposit successful!");
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        System.out.println("Account not found.");
+    }
+
+}
+             else if (choice == 4) {
                 System.out.println("Withdraw feature coming soon...");
             } else if (choice == 5) {
                 System.out.println("Exiting program...");
