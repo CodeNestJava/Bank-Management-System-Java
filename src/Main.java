@@ -37,7 +37,20 @@ public class Main {
 
            System.out.println("Account created successfully!");   
             } else if (choice == 2) {
-                System.out.println("View Accounts feature coming soon...");
+
+    if (accounts.isEmpty()) {
+        System.out.println("No accounts found.");
+    } else {
+        System.out.println("\n--- Account List ---");
+
+        for (Account acc : accounts) {
+            System.out.println(
+                "Account Number: " + acc.getAccountNumber() +
+                ", Holder: " + acc.getAccountHolder() +
+                ", Balance: " + acc.getBalance()
+            );
+        }
+    }
             } else if (choice == 3) {
                 System.out.println("Deposit feature coming soon...");
             } else if (choice == 4) {
