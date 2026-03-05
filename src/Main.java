@@ -78,9 +78,38 @@ public class Main {
     }
 
 }
-             else if (choice == 4) {
-                System.out.println("Withdraw feature coming soon...");
-            } else if (choice == 5) {
+            else if (choice == 4) {
+
+    System.out.print("Enter Account Number: ");
+    int accNumber = scanner.nextInt();
+
+    boolean found = false;
+
+    for (Account acc : accounts) {
+
+        if (acc.getAccountNumber() == accNumber) {
+
+            System.out.print("Enter withdraw amount: ");
+            double amount = scanner.nextDouble();
+
+            if (acc.getBalance() >= amount) {
+                acc.withdraw(amount);
+                System.out.println("Withdrawal successful!");
+            } else {
+                System.out.println("Insufficient balance.");
+            }
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        System.out.println("Account not found.");
+    }
+
+}
+             else if (choice == 5) {
                 System.out.println("Exiting program...");
                 break;
             } else {
